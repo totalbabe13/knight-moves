@@ -19,10 +19,25 @@ class Chess_board
 end	
 
 class Knight
-	attr_accessor :position
+	attr_accessor :position, :row, :column
 
- 	def initialize
- 		@position = 'd4'
-		
+ 	def initialize(row = 0,column = 0)
+ 		@row = row
+ 		@column = column
+	end
+
+	def position
+		return [row,column]
 	end	
+
+	def knight_moves(start_pos, end_pos)
+		  self.row    = start_pos[0]
+		  self.column = start_pos[1]
+		  
+
+    end
 end		
+
+# knight_moves([0,0],[1,2]) == [[0,0],[1,2]]
+# knight_moves([0,0],[3,3]) == [[0,0],[1,2],[3,3]]
+# knight_moves([3,3],[0,0]) == [[3,3],[1,2],[0,0]]
