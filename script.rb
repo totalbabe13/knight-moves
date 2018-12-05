@@ -1,4 +1,5 @@
 require_relative "lib/knight.rb" 
-puts 
 
-yolo(1)
+new_board = Chess_board.new
+
+new_board.board.each {|row| p row}
