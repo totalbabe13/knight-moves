@@ -12,18 +12,12 @@ require_relative "lib/knight.rb"
 new_board = Chess_board.new
 new_knight = Knight.new
  
- 
- puts ''
- p "currently the is here -->#{new_knight.position}"
- puts ''
- puts ''
-
+p new_knight
 # knight_moves([0,0],[1,2]) == [[0,0],[1,2]]
 
-new_knight.knight_moves([1,2],[1,2])
+new_knight.knight_moves([4,4],[1,2])
+
+puts''
+puts 'get knight to show possible moves:'
+p new_knight
 puts ''
-puts ''
-p "currently the is here -->#{new_knight.position}"
-puts ''
-puts ''
-p

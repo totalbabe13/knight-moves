@@ -5,7 +5,7 @@ class Chess_board
 
 	def initialize
 		@board = [
-
+          ['a0','b0','c0','d0','e0','f0','g0','h0'],
           ['a1','b1','c1','d1','e1','f1','g1','h1'],#0
           ['a2','b2','c2','d2','e2','f2','g2','h2'],#1
           ['a3','b3','c3','d3','e3','f3','g3','h3'],#2
@@ -13,17 +13,18 @@ class Chess_board
           ['a5','b5','c5','d5','e5','f5','g5','h5'],#4
           ['a6','b6','c6','d6','e6','f6','g6','h6'],#5
           ['a7','b7','c7','d7','e7','f7','g7','h7'],#6
-          ['a8','b8','c8','d8','e8','f8','g8','h8'] #8
+          # ['a8','b8','c8','d8','e8','f8','g8','h8'] #8
 		]
 	end	
 end	
 
 class Knight
-	attr_accessor :position, :row, :column
+	attr_accessor :position, :row, :column, :test_move
 
- 	def initialize(row = 0,column = 0)
+ 	def initialize
  		@row = row
  		@column = column
+ 		@test_move = nil
 	end
 
 	def position
@@ -33,8 +34,6 @@ class Knight
 	def knight_moves(start_pos, end_pos)
 		  self.row    = start_pos[0]
 		  self.column = start_pos[1]
-		  
-
     end
 end		
 
