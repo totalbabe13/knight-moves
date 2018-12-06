@@ -19,5 +19,7 @@ new_knight.knight_moves([4,4],[1,2])
 
 puts''
 puts 'get knight to show possible moves:'
-p new_knight
+# p new_knight
 puts ''
+new_knight.possible_moves
+p new_knight.all_moves

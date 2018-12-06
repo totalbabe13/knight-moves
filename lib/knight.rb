@@ -19,12 +19,21 @@ class Chess_board
 end	
 
 class Knight
-	attr_accessor :position, :row, :column, :test_move
+	attr_accessor :position, :row, :column, :move_1, :move_2, :move_3, :move_4, :move_5, :move_6, :move_7, :move_8, :all_moves
 
  	def initialize
- 		@row = row
- 		@column = column
- 		@test_move = nil
+ 		@row = 0
+ 		@column = 0
+ 		@move_1 = nil
+ 		@move_2 = nil
+ 		@move_3 = nil
+ 		@move_4 = nil
+ 		@move_5 = nil
+ 		@move_6 = nil
+ 		@move_7 = nil
+ 		@move_8 = nil
+ 		@all_moves = nil
+
 	end
 
 	def position
@@ -35,6 +44,22 @@ class Knight
 		  self.row    = start_pos[0]
 		  self.column = start_pos[1]
     end
+
+    def possible_moves
+    	x = self.position[0] 
+    	y = self.position[1]
+    	
+    	self.move_1 = [x+2, y+1]
+    	self.move_2 = [x+1, y+2]
+    	self.move_3 = [x-1, y+2]
+    	self.move_4 = [x-2, y+1]
+    	self.move_5 = [x-2, y-1]
+    	self.move_6 = [x-1, y-2]
+    	self.move_7 = [x+1, y-2]
+    	self.move_8 = [x+2, y-1]
+    	self.all_moves = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8]
+
+    end	
 end		
 
 # knight_moves([0,0],[1,2]) == [[0,0],[1,2]]
