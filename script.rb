@@ -15,11 +15,11 @@ new_knight = Knight.new
 p new_knight
 # knight_moves([0,0],[1,2]) == [[0,0],[1,2]]
 
-new_knight.knight_moves([4,4],[1,2])
+ new_knight.knight_moves([7,4],[1,2])
 
 puts''
-puts 'get knight to show possible moves:'
+puts 'is night off board?'
 # p new_knight
 puts ''
 new_knight.possible_moves
-p new_knight.all_moves
+p new_knight

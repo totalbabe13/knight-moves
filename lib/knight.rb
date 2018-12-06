@@ -5,15 +5,14 @@ class Chess_board
 
 	def initialize
 		@board = [
-          ['a0','b0','c0','d0','e0','f0','g0','h0'],
-          ['a1','b1','c1','d1','e1','f1','g1','h1'],#0
-          ['a2','b2','c2','d2','e2','f2','g2','h2'],#1
-          ['a3','b3','c3','d3','e3','f3','g3','h3'],#2
-          ['a4','b4','c4','d4','e4','f4','g4','h4'],#3
-          ['a5','b5','c5','d5','e5','f5','g5','h5'],#4
-          ['a6','b6','c6','d6','e6','f6','g6','h6'],#5
-          ['a7','b7','c7','d7','e7','f7','g7','h7'],#6
-          # ['a8','b8','c8','d8','e8','f8','g8','h8'] #8
+          ['0','1','2','3','4','5','6','7'],#0
+          ['0','1','2','3','4','5','6','7'],#1
+          ['0','1','2','3','4','5','6','7'],#2
+          ['0','1','2','3','4','5','6','7'],#3
+          ['0','1','2','3','4','5','6','7'],#4
+          ['0','1','2','3','4','5','6','7'],#5
+          ['0','1','2','3','4','5','6','7'],#6
+          ['0','1','2','3','4','5','6','7'],#7
 		]
 	end	
 end	
@@ -22,7 +21,7 @@ class Knight
 	attr_accessor :position, :row, :column, :move_1, :move_2, :move_3, :move_4, :move_5, :move_6, :move_7, :move_8, :all_moves
 
  	def initialize
- 		@row = 0
+ 		@row    = 0
  		@column = 0
  		@move_1 = nil
  		@move_2 = nil
@@ -58,7 +57,22 @@ class Knight
     	self.move_7 = [x+1, y-2]
     	self.move_8 = [x+2, y-1]
     	self.all_moves = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8]
+    	check_possible_moves
 
+    end	
+
+    def check_possible_moves
+      puts " - - - - - - "
+      self.all_moves.map! do |move|
+        if move[0] < 0 || move[1] < 0 	
+           move = nil
+        elsif move[0] > 7 || move[1] > 7
+           move = nil	   
+        else
+          move
+        end     		
+      end	
+      self.all_moves.delete_if {|move| move == nil }
     end	
 end		
 
