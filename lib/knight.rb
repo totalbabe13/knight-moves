@@ -18,11 +18,12 @@ class Chess_board
 end	
 
 class Knight
-	attr_accessor :position, :row, :column, :move_1, :move_2, :move_3, :move_4, :move_5, :move_6, :move_7, :move_8, :all_moves
+	attr_accessor :position, :row, :column, :move_1, :move_2, :move_3, :move_4, :move_5, :move_6, :move_7, :move_8, :all_moves, :path 
 
  	def initialize
  		@row    = 0
  		@column = 0
+ 		@path   = [] #array of arrays, path size == (length - 1)
  		@move_1 = nil
  		@move_2 = nil
  		@move_3 = nil
@@ -45,8 +46,30 @@ class Knight
 	end	
 
 	def knight_moves(start_pos, end_pos)
-		  self.row    = start_pos[0]
-		  self.column = start_pos[1]
+	  place_knight(start_pos)
+	  path << position
+      
+
+	  if  self.possible_moves.include?(end_pos)
+	    path << end_pos	
+	    puts "this the path -> #{path}"
+        return path 
+	  end	
+
+	  if self.possible_moves.include?(end_pos) == false
+	   	self.possible_moves.each do |move|
+	   		knight_moves(move,end_pos)
+	   		return path if move == end_pos
+	     end	
+	  end	
+	  	
+	  
+
+      
+
+	  # place_knight(end_pos)	
+	  # path << self.position 
+	  # p path
     end
 
     def possible_moves
