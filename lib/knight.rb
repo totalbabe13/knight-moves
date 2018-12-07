@@ -39,6 +39,11 @@ class Knight
 		return [row,column]
 	end	
 
+	def place_knight(coordinates)
+	  self.row    = coordinates[0]
+	  self.column = coordinates[1]	
+	end	
+
 	def knight_moves(start_pos, end_pos)
 		  self.row    = start_pos[0]
 		  self.column = start_pos[1]
@@ -58,7 +63,7 @@ class Knight
     	self.move_8 = [x+2, y-1]
     	self.all_moves = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8]
     	check_possible_moves
-
+        self.all_moves
     end	
 
     def check_possible_moves
