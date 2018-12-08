@@ -4,8 +4,14 @@ require_relative "lib/knight.rb"
 new_board = Chess_board.new
 new_knight = Knight.new
 
-# placed knight          [0,0]
-new_knight.knight_moves([0,0],[3,2])
+
+new_knight.knight_moves([4,4],[7,7])
+
+# - - - - - - - -  - - - - - - --
+
+
+# - - - - - - - -  - - - - - - --
+
 
 
 
